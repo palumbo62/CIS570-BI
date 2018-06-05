@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "MaxMinSalesDM", "MaxMinSalesDM\MaxMinSalesDM.dwproj", "{18F7447E-63F5-4DE7-A4E1-066C1893ADDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18F7447E-63F5-4DE7-A4E1-066C1893ADDF}.Development|Default.ActiveCfg = Development
+		{18F7447E-63F5-4DE7-A4E1-066C1893ADDF}.Development|Default.Build.0 = Development
+		{18F7447E-63F5-4DE7-A4E1-066C1893ADDF}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E2AD000-0FD7-4762-9993-B0F85CA5DDD1}
+	EndGlobalSection
+EndGlobal

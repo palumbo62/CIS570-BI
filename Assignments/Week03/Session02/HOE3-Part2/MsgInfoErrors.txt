@@ -1,0 +1,1 @@
+BatchNumber,MachineNumber,ProductCode,TimeStarted,TimeStopped,NumberProduced,NumberRejected,AcceptedProducts,ElapsedTimeForManufacture,DateOfManufacture

@@ -1,0 +1,157 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c789f382-ab93-4c67-8031-f8bcde8208ff" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Sales Person</ID>
+  <Name>Sales Person</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="a327a421-3600-4ccd-9829-366aa94419cf">
+    <DataSourceViewID>MaxMinSalesDM</DataSourceViewID>
+  </Source>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="e56944c9-69d1-4a31-9bae-f6acee11739c">
+      <ID>Sales Person</ID>
+      <Name>Sales Person</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9c42a0b8-c487-4e40-ae88-819acaa26fad">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="92ce2295-5432-4c1f-aa21-2fbd9013b557">
+            <TableID>Sales_Person</TableID>
+            <ColumnID>Sales_Person</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="f1d89d43-1067-4dd7-9a66-e7249e04d67f">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="94b07029-d0dd-4f54-96a0-8694ae18f6e8">
+          <TableID>Sales_Person</TableID>
+          <ColumnID>Sales_Person_Name</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="1675fc0b-4a1f-4469-8048-33ec46b21b54">
+          <AttributeID>Sales Person SCD Original ID</AttributeID>
+          <Name>Sales Person SCD Original ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="12bcb54d-b3e5-4c38-8d33-87ff4477f718">
+          <AttributeID>Sales Person SCD Status</AttributeID>
+          <Name>Sales Person SCD Status</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="34791c02-c8eb-45a9-b008-3060ac60a30b">
+          <AttributeID>Sales Person SCD Start Date</AttributeID>
+          <Name>Sales Person SCD Start Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="df6e912b-8a45-40d2-85c9-212867e9856d">
+          <AttributeID>Sales Person SCD End Date</AttributeID>
+          <Name>Sales Person SCD End Date</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1b834965-5377-41e7-908d-f9062f471f4d">
+      <ID>Sales Person SCD Original ID</ID>
+      <Name>Sales Person SCD Original ID</Name>
+      <Type>ScdOriginalID</Type>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="30fd6782-2cd3-4397-93e6-9257aa2ea98e">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dfdd7eb1-9d16-4d8b-b7d9-925502ae7a2b">
+            <TableID>Sales_Person</TableID>
+            <ColumnID>Sales_Person_SCD_Original_ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="10beedd8-4996-4a8a-8ee3-f4dd80376e48">
+      <ID>Sales Person SCD Status</ID>
+      <Name>Sales Person SCD Status</Name>
+      <Type>ScdStatus</Type>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="13e2e121-8707-4603-a77a-279ba6df078c">
+          <DataType>WChar</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="686366bf-a9e2-4ff8-abc4-00423f21fc1b">
+            <TableID>Sales_Person</TableID>
+            <ColumnID>Sales_Person_SCD_Status</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="13f47970-c84b-4d13-b228-b380d6b2c71b">
+      <ID>Sales Person SCD Start Date</ID>
+      <Name>Sales Person SCD Start Date</Name>
+      <Type>ScdStartDate</Type>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d90a3cf6-d001-428a-b37f-d5e8ba293515">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="341ce77d-5f92-434b-92d2-80ab44d4d641">
+            <TableID>Sales_Person</TableID>
+            <ColumnID>Sales_Person_SCD_Start_Date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c2f9fb21-b996-4ba2-820b-97d4b04f94e8">
+      <ID>Sales Person SCD End Date</ID>
+      <Name>Sales Person SCD End Date</Name>
+      <Type>ScdEndDate</Type>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4c3d6e7b-676f-486b-8f7b-8c4a8a252795">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="876e6242-202d-4935-826a-8b9a0748d036">
+            <TableID>Sales_Person</TableID>
+            <ColumnID>Sales_Person_SCD_End_Date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

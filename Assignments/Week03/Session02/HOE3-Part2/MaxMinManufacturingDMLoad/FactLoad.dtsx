@@ -1,0 +1,2889 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/30/2018 8:37:43 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="BUSELAB14"
+  DTS:CreatorName="COLOSTATE\peebs"
+  DTS:DTSID="{3E7B68F0-3643-407B-AE3A-DAA09C9D4FF2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.92"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="FactLoad"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{97856123-B15C-462E-8576-FC21875B98B1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Error Output]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{6A43C234-BD82-48E9-A060-1CC532564A5D}"
+      DTS:ObjectName="Error Output">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="S:\CIS570\Palumbo,Robert (peebs)\HOE3-Part2\MsgInfoErrors.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BatchNumber"
+              DTS:DTSID="{3288FF4E-77C6-49A3-A043-6260BD745CFC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MachineNumber"
+              DTS:DTSID="{DE92B104-5449-4541-83C8-7CE0DABF38EC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductCode"
+              DTS:DTSID="{40085DC1-013D-450B-B36F-646076806C11}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TimeStarted"
+              DTS:DTSID="{95CE6B85-A75C-4BA1-99CA-BD519D1E5BA6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TimeStopped"
+              DTS:DTSID="{7E191313-7C4E-406E-A464-69C22E5CCCB9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NumberProduced"
+              DTS:DTSID="{2D8DD7DC-8674-4BEF-8E7B-DD1341581DF7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NumberRejected"
+              DTS:DTSID="{C486DF98-6565-45F0-9C13-D4BE7E7249D0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AcceptedProducts"
+              DTS:DTSID="{7FC58EC4-CA6E-4667-8200-71B491F7A20F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="6"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ElapsedTimeForManufacture"
+              DTS:DTSID="{35D592C4-EFA8-408B-897B-2E1D1AE08273}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DateOfManufacture"
+              DTS:DTSID="{1AEB1D51-A814-40B3-AB65-5CB35B613C7D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{99DE09AF-C28C-4ECB-B97C-969E6590ADEF}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="S:\CIS570\Palumbo,Robert (peebs)\HOE3-Part2\BatchInfo.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BatchNumber"
+              DTS:DTSID="{41E64E84-A675-4772-BE49-52E3D9A61DE8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MachineNumber"
+              DTS:DTSID="{B27A8BD4-8D10-4485-B5B4-A1AF5EF072C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductCode"
+              DTS:DTSID="{3859F30E-F2A1-4B8A-AC3F-65D7A2B9C166}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TimeStarted"
+              DTS:DTSID="{A9600DB3-11FE-445C-B92A-B672DB9D6092}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TimeStopped"
+              DTS:DTSID="{8BF6CDF6-39BA-4493-B5D3-FA2DFB1C2AEE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NumberProduced"
+              DTS:DTSID="{79954938-E8F0-4666-A0B6-AD3384BD04B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NumberRejected"
+              DTS:DTSID="{7635C221-D71F-4114-A574-BE52C8EE8EE6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load DimBatch"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2A15DC15-9174-4862-9E22-F564E3492AD2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load DimBatch"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load DimBatch\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load DimBatch\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimBatch\Derived Column.Inputs[Derived Column Input].Columns[BatchNumber]"
+                      cachedDataType="i4"
+                      cachedName="BatchNumber"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Load DimBatch\Sort.Outputs[Sort Output].Columns[BatchNumber]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimBatch\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load DimBatch\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimBatch\Derived Column.Outputs[Derived Column Output].Columns[BatchName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load DimBatch\Derived Column.Outputs[Derived Column Output].Columns[BatchName]"
+                      name="BatchName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,50)#{Package\Load DimBatch\Sort.Outputs[Sort Output].Columns[BatchNumber]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,50)BatchNumber</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load DimBatch\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load DimBatch\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimBatch\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimBatch\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimBatch\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimBatch\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimBatch\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DimBatch\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Output].Columns[BatchNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BatchNumber]"
+                      lineageId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Output].Columns[BatchNumber]"
+                      name="BatchNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BatchNumber]"
+                      dataType="i4"
+                      name="BatchNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MachineNumber]"
+                      dataType="i4"
+                      name="MachineNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductCode]"
+                      dataType="i4"
+                      name="ProductCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeStarted]"
+                      dataType="dbTimeStamp"
+                      name="TimeStarted" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeStopped]"
+                      dataType="dbTimeStamp"
+                      name="TimeStopped" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NumberProduced]"
+                      dataType="i4"
+                      name="NumberProduced" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NumberRejected]"
+                      dataType="i4"
+                      name="NumberRejected" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimBatch\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimBatch]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DimBatch\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{A62D4907-9A42-467E-84E1-135AF857BE73}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[PalumboManufacturingDM]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load DimBatch\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimBatch\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BatchNumber]"
+                      cachedDataType="i4"
+                      cachedName="BatchNumber"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Load DimBatch\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BatchNumber]"
+                      lineageId="Package\Load DimBatch\Sort.Outputs[Sort Output].Columns[BatchNumber]" />
+                    <inputColumn
+                      refId="Package\Load DimBatch\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BatchName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="BatchName"
+                      externalMetadataColumnId="Package\Load DimBatch\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BatchName]"
+                      lineageId="Package\Load DimBatch\Derived Column.Outputs[Derived Column Output].Columns[BatchName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DimBatch\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BatchNumber]"
+                      dataType="i4"
+                      name="BatchNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimBatch\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BatchName]"
+                      dataType="wstr"
+                      length="50"
+                      name="BatchName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimBatch\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load DimBatch\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimBatch\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimBatch\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimBatch\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimBatch\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimBatch\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load DimBatch\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimBatch\Sort.Inputs[Sort Input].Columns[BatchNumber]"
+                      cachedDataType="i4"
+                      cachedName="BatchNumber"
+                      lineageId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Output].Columns[BatchNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimBatch\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimBatch\Sort.Outputs[Sort Output].Columns[BatchNumber]"
+                      dataType="i4"
+                      lineageId="Package\Load DimBatch\Sort.Outputs[Sort Output].Columns[BatchNumber]"
+                      name="BatchNumber"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Output].Columns[BatchNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load DimBatch.Paths[Derived Column Output]"
+              endId="Package\Load DimBatch\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load DimBatch\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load DimBatch.Paths[Flat File Source Output]"
+              endId="Package\Load DimBatch\Sort.Inputs[Sort Input]"
+              name="Flat File Source Output"
+              startId="Package\Load DimBatch\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Load DimBatch.Paths[Sort Output]"
+              endId="Package\Load DimBatch\Derived Column.Inputs[Derived Column Input]"
+              name="Sort Output"
+              startId="Package\Load DimBatch\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load ManufacturingFact"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{CB886E0E-81FA-4B94-BF2A-4247CD176941}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load ManufacturingFact"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load ManufacturingFact\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load ManufacturingFact\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Derived Column.Inputs[Derived Column Input].Columns[TimeStarted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TimeStarted"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[TimeStarted]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Derived Column.Inputs[Derived Column Input].Columns[TimeStopped]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TimeStopped"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[TimeStopped]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Derived Column.Inputs[Derived Column Input].Columns[NumberProduced]"
+                      cachedDataType="i4"
+                      cachedName="NumberProduced"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[NumberProduced]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Derived Column.Inputs[Derived Column Input].Columns[NumberRejected]"
+                      cachedDataType="i4"
+                      cachedName="NumberRejected"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[NumberRejected]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load ManufacturingFact\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[AcceptedProducts]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[AcceptedProducts]"
+                      name="AcceptedProducts"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[NumberProduced]} - #{Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[NumberRejected]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">NumberProduced - NumberRejected</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[ElapsedTimeForManufacture]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[ElapsedTimeForManufacture]"
+                      name="ElapsedTimeForManufacture"
+                      precision="6"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_NUMERIC,6,2)[DATEDIFF]("mi",#{Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[TimeStarted]},#{Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[TimeStopped]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_NUMERIC,6,2)DATEDIFF("mi",TimeStarted,TimeStopped)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[DateOfManufacture]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[DateOfManufacture]"
+                      name="DateOfManufacture"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)[SUBSTRING]((DT_WSTR,25)#{Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[TimeStarted]},1,10)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)SUBSTRING((DT_WSTR,25)TimeStarted,1,10)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load ManufacturingFact\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load ManufacturingFact\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load ManufacturingFact\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[BatchNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BatchNumber]"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[BatchNumber]"
+                      name="BatchNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[MachineNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MachineNumber]"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[MachineNumber]"
+                      name="MachineNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[ProductCode]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductCode]"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[ProductCode]"
+                      name="ProductCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[TimeStarted]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeStarted]"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[TimeStarted]"
+                      name="TimeStarted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[TimeStopped]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeStopped]"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[TimeStopped]"
+                      name="TimeStopped"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[NumberProduced]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NumberProduced]"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[NumberProduced]"
+                      name="NumberProduced"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[NumberRejected]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NumberRejected]"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[NumberRejected]"
+                      name="NumberRejected"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BatchNumber]"
+                      dataType="i4"
+                      name="BatchNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MachineNumber]"
+                      dataType="i4"
+                      name="MachineNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductCode]"
+                      dataType="i4"
+                      name="ProductCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeStarted]"
+                      dataType="dbTimeStamp"
+                      name="TimeStarted" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeStopped]"
+                      dataType="dbTimeStamp"
+                      name="TimeStopped" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NumberProduced]"
+                      dataType="i4"
+                      name="NumberProduced" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NumberRejected]"
+                      dataType="i4"
+                      name="NumberRejected" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load ManufacturingFact\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactManufacturing]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load ManufacturingFact\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{A62D4907-9A42-467E-84E1-135AF857BE73}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[PalumboManufacturingDM]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BatchNumber]"
+                      cachedDataType="i4"
+                      cachedName="BatchNumber"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BatchNumber]"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[BatchNumber]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MachineNumber]"
+                      cachedDataType="i4"
+                      cachedName="MachineNumber"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MachineNumber]"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[MachineNumber]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductCode]"
+                      cachedDataType="i4"
+                      cachedName="ProductCode"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductCode]"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[ProductCode]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AcceptedProducts]"
+                      cachedDataType="i4"
+                      cachedName="AcceptedProducts"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AcceptedProducts]"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[AcceptedProducts]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DateOfManufacture]"
+                      cachedDataType="dbDate"
+                      cachedName="DateOfManufacture"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateOfManufacture]"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[DateOfManufacture]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NumberRejected]"
+                      cachedDataType="i4"
+                      cachedName="NumberRejected"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RejectedProducts]"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[NumberRejected]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ElapsedTimeForManufacture]"
+                      cachedDataType="numeric"
+                      cachedName="ElapsedTimeForManufacture"
+                      cachedPrecision="6"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ElapsedTimeForManufacture]"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[ElapsedTimeForManufacture]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AcceptedProducts]"
+                      dataType="i4"
+                      name="AcceptedProducts" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RejectedProducts]"
+                      dataType="i4"
+                      name="RejectedProducts" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateOfManufacture]"
+                      dataType="dbDate"
+                      name="DateOfManufacture" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductCode]"
+                      dataType="i4"
+                      name="ProductCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BatchNumber]"
+                      dataType="i4"
+                      name="BatchNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MachineNumber]"
+                      dataType="i4"
+                      name="MachineNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ElapsedTimeForManufacture]"
+                      dataType="numeric"
+                      name="ElapsedTimeForManufacture"
+                      precision="6"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load ManufacturingFact\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load ManufacturingFact\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 1].Columns[BatchNumber]"
+                      cachedDataType="i4"
+                      cachedName="BatchNumber"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[BatchNumber]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[BatchNumber]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 1].Columns[MachineNumber]"
+                      cachedDataType="i4"
+                      cachedName="MachineNumber"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[MachineNumber]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[MachineNumber]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 1].Columns[ProductCode]"
+                      cachedDataType="i4"
+                      cachedName="ProductCode"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[ProductCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[ProductCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 1].Columns[TimeStarted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TimeStarted"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[TimeStarted]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[TimeStarted]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 1].Columns[TimeStopped]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TimeStopped"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[TimeStopped]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[TimeStopped]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 1].Columns[NumberProduced]"
+                      cachedDataType="i4"
+                      cachedName="NumberProduced"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[NumberProduced]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[NumberProduced]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 1].Columns[NumberRejected]"
+                      cachedDataType="i4"
+                      cachedName="NumberRejected"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[NumberRejected]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[NumberRejected]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 1].Columns[AcceptedProducts]"
+                      cachedDataType="i4"
+                      cachedName="AcceptedProducts"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[AcceptedProducts]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[AcceptedProducts]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 1].Columns[ElapsedTimeForManufacture]"
+                      cachedDataType="numeric"
+                      cachedName="ElapsedTimeForManufacture"
+                      cachedPrecision="6"
+                      cachedScale="2"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[ElapsedTimeForManufacture]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[ElapsedTimeForManufacture]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 1].Columns[DateOfManufacture]"
+                      cachedDataType="dbDate"
+                      cachedName="DateOfManufacture"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[DateOfManufacture]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[DateOfManufacture]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 2].Columns[BatchNumber]"
+                      cachedDataType="i4"
+                      cachedName="BatchNumber"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[BatchNumber]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[BatchNumber]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 2].Columns[MachineNumber]"
+                      cachedDataType="i4"
+                      cachedName="MachineNumber"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[MachineNumber]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[MachineNumber]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 2].Columns[ProductCode]"
+                      cachedDataType="i4"
+                      cachedName="ProductCode"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[ProductCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[ProductCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 2].Columns[TimeStarted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TimeStarted"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[TimeStarted]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[TimeStarted]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 2].Columns[TimeStopped]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TimeStopped"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[TimeStopped]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[TimeStopped]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 2].Columns[NumberProduced]"
+                      cachedDataType="i4"
+                      cachedName="NumberProduced"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[NumberProduced]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[NumberProduced]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 2].Columns[NumberRejected]"
+                      cachedDataType="i4"
+                      cachedName="NumberRejected"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[NumberRejected]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[NumberRejected]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 2].Columns[AcceptedProducts]"
+                      cachedDataType="i4"
+                      cachedName="AcceptedProducts"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[AcceptedProducts]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[AcceptedProducts]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 2].Columns[ElapsedTimeForManufacture]"
+                      cachedDataType="numeric"
+                      cachedName="ElapsedTimeForManufacture"
+                      cachedPrecision="6"
+                      cachedScale="2"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[ElapsedTimeForManufacture]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[ElapsedTimeForManufacture]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 2].Columns[DateOfManufacture]"
+                      cachedDataType="dbDate"
+                      cachedName="DateOfManufacture"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[DateOfManufacture]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[DateOfManufacture]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 3].Columns[BatchNumber]"
+                      cachedDataType="i4"
+                      cachedName="BatchNumber"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[BatchNumber]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[BatchNumber]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 3].Columns[MachineNumber]"
+                      cachedDataType="i4"
+                      cachedName="MachineNumber"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[MachineNumber]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[MachineNumber]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 3].Columns[ProductCode]"
+                      cachedDataType="i4"
+                      cachedName="ProductCode"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[ProductCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[ProductCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 3].Columns[TimeStarted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TimeStarted"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[TimeStarted]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[TimeStarted]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 3].Columns[TimeStopped]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TimeStopped"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[TimeStopped]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[TimeStopped]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 3].Columns[NumberProduced]"
+                      cachedDataType="i4"
+                      cachedName="NumberProduced"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[NumberProduced]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[NumberProduced]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 3].Columns[NumberRejected]"
+                      cachedDataType="i4"
+                      cachedName="NumberRejected"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[NumberRejected]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[NumberRejected]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 3].Columns[AcceptedProducts]"
+                      cachedDataType="i4"
+                      cachedName="AcceptedProducts"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[AcceptedProducts]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[AcceptedProducts]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 3].Columns[ElapsedTimeForManufacture]"
+                      cachedDataType="numeric"
+                      cachedName="ElapsedTimeForManufacture"
+                      cachedPrecision="6"
+                      cachedScale="2"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[ElapsedTimeForManufacture]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[ElapsedTimeForManufacture]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 3].Columns[DateOfManufacture]"
+                      cachedDataType="dbDate"
+                      cachedName="DateOfManufacture"
+                      lineageId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output].Columns[DateOfManufacture]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[DateOfManufacture]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 4]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 4">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[BatchNumber]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[BatchNumber]"
+                      name="BatchNumber" />
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[MachineNumber]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[MachineNumber]"
+                      name="MachineNumber" />
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[ProductCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[ProductCode]"
+                      name="ProductCode" />
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[TimeStarted]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[TimeStarted]"
+                      name="TimeStarted" />
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[TimeStopped]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[TimeStopped]"
+                      name="TimeStopped" />
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[NumberProduced]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[NumberProduced]"
+                      name="NumberProduced" />
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[NumberRejected]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[NumberRejected]"
+                      name="NumberRejected" />
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[AcceptedProducts]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[AcceptedProducts]"
+                      name="AcceptedProducts" />
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[ElapsedTimeForManufacture]"
+                      dataType="numeric"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[ElapsedTimeForManufacture]"
+                      name="ElapsedTimeForManufacture"
+                      precision="6"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[DateOfManufacture]"
+                      dataType="dbDate"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[DateOfManufacture]"
+                      name="DateOfManufacture" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load ManufacturingFact\Validate Batch Number"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Validate Batch Number"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimBatch]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimBatch]) [refTable]
+where [refTable].[BatchNumber] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="BatchNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BatchName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[BatchNumber]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load ManufacturingFact\Validate Batch Number.Connections[OleDbConnection]"
+                  connectionManagerID="{A62D4907-9A42-467E-84E1-135AF857BE73}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[PalumboManufacturingDM]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load ManufacturingFact\Validate Batch Number.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Validate Batch Number.Inputs[Lookup Input].Columns[BatchNumber]"
+                      cachedDataType="i4"
+                      cachedName="BatchNumber"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[BatchNumber]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">BatchNumber</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load ManufacturingFact\Validate Batch Number.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Load ManufacturingFact\Validate Batch Number.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load ManufacturingFact\Validate Batch Number.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Load ManufacturingFact\Validate Batch Number.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load ManufacturingFact\Validate Batch Number.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Load ManufacturingFact\Validate Batch Number.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Validate Batch Number.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\Validate Batch Number.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Validate Batch Number.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\Validate Batch Number.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load ManufacturingFact\Validate Machine Number"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Validate Machine Number"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimMachine]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimMachine]) [refTable]
+where [refTable].[MachineNumber] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="MachineNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MachineName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MachineTypeKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PlantNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Manufacturer" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DateOfPurchase" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[MachineNumber]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load ManufacturingFact\Validate Machine Number.Connections[OleDbConnection]"
+                  connectionManagerID="{A62D4907-9A42-467E-84E1-135AF857BE73}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[PalumboManufacturingDM]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load ManufacturingFact\Validate Machine Number.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Validate Machine Number.Inputs[Lookup Input].Columns[MachineNumber]"
+                      cachedDataType="i4"
+                      cachedName="MachineNumber"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[MachineNumber]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">MachineNumber</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load ManufacturingFact\Validate Machine Number.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Load ManufacturingFact\Validate Machine Number.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load ManufacturingFact\Validate Machine Number.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Load ManufacturingFact\Validate Machine Number.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load ManufacturingFact\Validate Machine Number.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Load ManufacturingFact\Validate Machine Number.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Validate Machine Number.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\Validate Machine Number.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Validate Machine Number.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\Validate Machine Number.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load ManufacturingFact\Validate Product"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Validate Product"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimProduct]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimProduct]) [refTable]
+where [refTable].[ProductCode] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ProductCode" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductSubtypeCode" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[ProductCode]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load ManufacturingFact\Validate Product.Connections[OleDbConnection]"
+                  connectionManagerID="{A62D4907-9A42-467E-84E1-135AF857BE73}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[PalumboManufacturingDM]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load ManufacturingFact\Validate Product.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Validate Product.Inputs[Lookup Input].Columns[ProductCode]"
+                      cachedDataType="i4"
+                      cachedName="ProductCode"
+                      lineageId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output].Columns[ProductCode]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">ProductCode</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load ManufacturingFact\Validate Product.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Load ManufacturingFact\Validate Product.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load ManufacturingFact\Validate Product.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Load ManufacturingFact\Validate Product.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load ManufacturingFact\Validate Product.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Load ManufacturingFact\Validate Product.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Validate Product.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\Validate Product.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load ManufacturingFact\Validate Product.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load ManufacturingFact\Validate Product.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load ManufacturingFact\Write Error Records to a Text File"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Write Error Records to a Text File">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Error Output]"
+                  connectionManagerRefId="Package.ConnectionManagers[Error Output]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].Columns[BatchNumber]"
+                      cachedDataType="i4"
+                      cachedName="BatchNumber"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[BatchNumber]"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[BatchNumber]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].Columns[MachineNumber]"
+                      cachedDataType="i4"
+                      cachedName="MachineNumber"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[MachineNumber]"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[MachineNumber]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].Columns[ProductCode]"
+                      cachedDataType="i4"
+                      cachedName="ProductCode"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[ProductCode]"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[ProductCode]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].Columns[TimeStarted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TimeStarted"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[TimeStarted]"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[TimeStarted]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].Columns[TimeStopped]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TimeStopped"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[TimeStopped]"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[TimeStopped]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].Columns[NumberProduced]"
+                      cachedDataType="i4"
+                      cachedName="NumberProduced"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[NumberProduced]"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[NumberProduced]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].Columns[NumberRejected]"
+                      cachedDataType="i4"
+                      cachedName="NumberRejected"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[NumberRejected]"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[NumberRejected]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].Columns[AcceptedProducts]"
+                      cachedDataType="i4"
+                      cachedName="AcceptedProducts"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[AcceptedProducts]"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[AcceptedProducts]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].Columns[ElapsedTimeForManufacture]"
+                      cachedDataType="numeric"
+                      cachedName="ElapsedTimeForManufacture"
+                      cachedPrecision="6"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[ElapsedTimeForManufacture]"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[ElapsedTimeForManufacture]" />
+                    <inputColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].Columns[DateOfManufacture]"
+                      cachedDataType="dbDate"
+                      cachedName="DateOfManufacture"
+                      externalMetadataColumnId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[DateOfManufacture]"
+                      lineageId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1].Columns[DateOfManufacture]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[BatchNumber]"
+                      dataType="i4"
+                      name="BatchNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[MachineNumber]"
+                      dataType="i4"
+                      name="MachineNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[ProductCode]"
+                      dataType="i4"
+                      name="ProductCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[TimeStarted]"
+                      dataType="dbTimeStamp"
+                      name="TimeStarted" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[TimeStopped]"
+                      dataType="dbTimeStamp"
+                      name="TimeStopped" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[NumberProduced]"
+                      dataType="i4"
+                      name="NumberProduced" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[NumberRejected]"
+                      dataType="i4"
+                      name="NumberRejected" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[AcceptedProducts]"
+                      dataType="i4"
+                      name="AcceptedProducts" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[ElapsedTimeForManufacture]"
+                      dataType="numeric"
+                      name="ElapsedTimeForManufacture"
+                      precision="6"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input].ExternalColumns[DateOfManufacture]"
+                      dataType="dbDate"
+                      name="DateOfManufacture" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load ManufacturingFact.Paths[Derived Column Output]"
+              endId="Package\Load ManufacturingFact\Validate Batch Number.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Load ManufacturingFact\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load ManufacturingFact.Paths[Flat File Source Output]"
+              endId="Package\Load ManufacturingFact\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Load ManufacturingFact\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Load ManufacturingFact.Paths[Lookup Match Output]"
+              endId="Package\Load ManufacturingFact\Validate Machine Number.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Load ManufacturingFact\Validate Batch Number.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Load ManufacturingFact.Paths[Lookup Match Output1]"
+              endId="Package\Load ManufacturingFact\Validate Product.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Load ManufacturingFact\Validate Machine Number.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Load ManufacturingFact.Paths[Lookup Match Output2]"
+              endId="Package\Load ManufacturingFact\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\Load ManufacturingFact\Validate Product.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Load ManufacturingFact.Paths[Lookup No Match Output]"
+              endId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 1]"
+              name="Lookup No Match Output"
+              startId="Package\Load ManufacturingFact\Validate Batch Number.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Load ManufacturingFact.Paths[Lookup No Match Output1]"
+              endId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 2]"
+              name="Lookup No Match Output"
+              startId="Package\Load ManufacturingFact\Validate Machine Number.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Load ManufacturingFact.Paths[Lookup No Match Output2]"
+              endId="Package\Load ManufacturingFact\Union All.Inputs[Union All Input 3]"
+              name="Lookup No Match Output"
+              startId="Package\Load ManufacturingFact\Validate Product.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Load ManufacturingFact.Paths[Union All Output 1]"
+              endId="Package\Load ManufacturingFact\Write Error Records to a Text File.Inputs[Flat File Destination Input]"
+              name="Union All Output 1"
+              startId="Package\Load ManufacturingFact\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{2DA47F84-FB9D-4303-8A7B-56A38380FD04}"
+      DTS:From="Package\Load DimBatch"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load ManufacturingFact" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Load DimBatch"
+          TopLeft="37.9166661016643,35.9666660235326" />
+        <NodeLayout
+          Size="192,42.6666666666667"
+          Id="Package\Load ManufacturingFact"
+          TopLeft="118.055553796391,132.166664303343" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="113.249999434998,78.6333326901993">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.805554361393,53.5333316131437"
+              Start="0,0"
+              End="100.805554361393,46.0333316131437">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.7666658065719" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.7666658065719"
+                    Point2="0,26.7666658065719"
+                    Point3="4,26.7666658065719" />
+                  <mssgle:LineSegment
+                    End="96.8055543613934,26.7666658065719" />
+                  <mssgle:CubicBezierSegment
+                    Point1="96.8055543613934,26.7666658065719"
+                    Point2="100.805554361393,26.7666658065719"
+                    Point3="100.805554361393,30.7666658065719" />
+                  <mssgle:LineSegment
+                    End="100.805554361393,46.0333316131437" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load DimBatch">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="98.6666666666667,42.6666666666667"
+          Id="Package\Load DimBatch\Sort"
+          TopLeft="151.249997746199,151.666663954655" />
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\Load DimBatch\Flat File Source"
+          TopLeft="70.8333322778344,46.7999991631508" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Load DimBatch\OLE DB Destination"
+          TopLeft="267.499996013939,354.466660328309" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Load DimBatch\Derived Column"
+          TopLeft="204.166663624346,249.599995536804" />
+        <EdgeLayout
+          Id="Package\Load DimBatch.Paths[Derived Column Output]"
+          TopLeft="281.49999695768,292.266662203471">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="71.9999990562599,62.199998124838"
+              Start="0,0"
+              End="71.9999990562599,54.699998124838">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.099999062419" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.099999062419"
+                    Point2="0,31.099999062419"
+                    Point3="4,31.099999062419" />
+                  <mssgle:LineSegment
+                    End="67.9999990562599,31.099999062419" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.9999990562599,31.099999062419"
+                    Point2="71.9999990562599,31.099999062419"
+                    Point3="71.9999990562599,35.099999062419" />
+                  <mssgle:LineSegment
+                    End="71.9999990562599,54.699998124838" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DimBatch.Paths[Sort Output]"
+          TopLeft="200.583331079533,194.333330621322">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80.9166658781469,55.2666649154822"
+              Start="0,0"
+              End="80.9166658781469,47.7666649154822">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6333324577411" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.6333324577411"
+                    Point2="0,27.6333324577411"
+                    Point3="4,27.6333324577411" />
+                  <mssgle:LineSegment
+                    End="76.9166658781469,27.6333324577411" />
+                  <mssgle:CubicBezierSegment
+                    Point1="76.9166658781469,27.6333324577411"
+                    Point2="80.9166658781469,27.6333324577411"
+                    Point3="80.9166658781469,31.6333324577411" />
+                  <mssgle:LineSegment
+                    End="80.9166658781469,47.7666649154822" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DimBatch.Paths[Flat File Source Output]"
+          TopLeft="146.833332277834,89.4666658298175">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="53.7499988016983,62.1999981248379"
+              Start="0,0"
+              End="53.7499988016983,54.6999981248379">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.099999062419" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.099999062419"
+                    Point2="0,31.099999062419"
+                    Point3="4,31.099999062419" />
+                  <mssgle:LineSegment
+                    End="49.7499988016983,31.099999062419" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.7499988016983,31.099999062419"
+                    Point2="53.7499988016983,31.099999062419"
+                    Point3="53.7499988016983,35.099999062419" />
+                  <mssgle:LineSegment
+                    End="53.7499988016983,54.6999981248379" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load DimBatch\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load ManufacturingFact">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Load ManufacturingFact\OLE DB Destination"
+          TopLeft="89.9583399302018,420.083334011336" />
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\Load ManufacturingFact\Flat File Source"
+          TopLeft="97.8749994256844,27.9166667635242" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Load ManufacturingFact\Derived Column"
+          TopLeft="98.458334031825,121.66666658918" />
+        <EdgeLayout
+          Id="Package\Load ManufacturingFact.Paths[Lookup Match Output2]"
+          TopLeft="176.062505285256,307.499997055531">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,112.583336955805"
+              Start="0,0"
+              End="0,105.083336955805">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,105.083336955805" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,46.7369809779025,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load ManufacturingFact.Paths[Flat File Source Output]"
+          TopLeft="174.833333395421,70.5833334301908">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.0833331589895"
+              Start="0,0"
+              End="0,43.5833331589895">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5833331589895" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load ManufacturingFact.Paths[Derived Column Output]"
+          TopLeft="175.979169002734,164.333333255847">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,100.499997133017"
+              Start="0,0"
+              End="0,92.9999971330174">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,92.9999971330174" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="188,42.6666666666667"
+          Id="Package\Load ManufacturingFact\Validate Batch Number"
+          TopLeft="16.8749983701855,5.5" />
+        <NodeLayout
+          Size="200,42.6666666666667"
+          Id="Package\Load ManufacturingFact\Validate Machine Number"
+          TopLeft="5.5,87.2500001356003" />
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\Load ManufacturingFact\Validate Product"
+          TopLeft="34.95833490106,176.750000096857" />
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Load ManufacturingFact\Union All"
+          TopLeft="483.749988234292,89.5833282773692" />
+        <NodeLayout
+          Size="237.333333333334,42.6666666666667"
+          Id="Package\Load ManufacturingFact\Write Error Records to a Text File"
+          TopLeft="444.166655490796,241.249992232024" />
+        <EdgeLayout
+          Id="Package\Load ManufacturingFact.Paths[Lookup Match Output]"
+          TopLeft="108.187499185093,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.0833334689336"
+              Start="0,0"
+              End="0,31.5833334689336">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5833334689336" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,9.9869792344668,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load ManufacturingFact.Paths[Lookup No Match Output]"
+          TopLeft="140.874998370186,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="403.541656530773,41.4166616107025"
+              Start="0,0"
+              End="403.541656530773,33.9166616107025">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.7763692600314" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.7763692600314"
+                    Point2="0,16.7763692600314"
+                    Point3="4,16.7763692600314" />
+                  <mssgle:LineSegment
+                    End="399.541656530773,16.7763692600314" />
+                  <mssgle:CubicBezierSegment
+                    Point1="399.541656530773,16.7763692600314"
+                    Point2="403.541656530773,16.7763692600314"
+                    Point3="403.541656530773,20.7763692600314" />
+                  <mssgle:LineSegment
+                    End="403.541656530773,33.9166616107025" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="145.964441546637,21.7763692600314,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load ManufacturingFact.Paths[Lookup Match Output1]"
+          TopLeft="109.22916745053,129.916666802267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.8333332945899"
+              Start="0,0"
+              End="0,39.3333332945899">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.3333332945899" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,13.861979147295,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load ManufacturingFact.Paths[Lookup No Match Output1]"
+          TopLeft="205.5,109.749997539818">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="278.249988234292,0"
+              Start="0,0"
+              End="270.749988234292,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="270.749988234292,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="79.5686073983961,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load ManufacturingFact.Paths[Lookup No Match Output2]"
+          TopLeft="137.625001567727,176.750000096857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="406.791653333232,-44.500005152821"
+              Start="0,0"
+              End="406.791653333232,-37.000005152821">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-14.0710680823639" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-14.0710680823639"
+                    Point2="0,-18.0710680823639"
+                    Point3="4,-18.0710680823639" />
+                  <mssgle:LineSegment
+                    End="402.791653333232,-18.0710680823639" />
+                  <mssgle:CubicBezierSegment
+                    Point1="402.791653333232,-18.0710680823639"
+                    Point2="406.791653333232,-18.0710680823639"
+                    Point3="406.791653333232,-22.0710680823639" />
+                  <mssgle:LineSegment
+                    End="406.791653333232,-37.000005152821" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="147.589439947866,-13.0710680823639,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load ManufacturingFact.Paths[Union All Output 1]"
+          TopLeft="563.069432973655,132.249994944036">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,108.999997287989"
+              Start="0,0"
+              End="0,101.499997287989">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,101.499997287989" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <GroupLayout
+          Text="Validate Batch Number, Machine Number, Product"
+          ParentId="Package\Load ManufacturingFact"
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="686.666666666667,338.666666666667"
+          Size="274,42.6666666666667"
+          Id="185902cf-02bf-432e-a2ac-5552588ae9b1"
+          TopLeft="39.1666706403093,264.833330388864">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\Load ManufacturingFact\Validate Batch Number</s:String>
+            <s:String>Package\Load ManufacturingFact\Validate Machine Number</s:String>
+            <s:String>Package\Load ManufacturingFact\Validate Product</s:String>
+            <s:String>Package\Load ManufacturingFact\Union All</s:String>
+            <s:String>Package\Load ManufacturingFact\Write Error Records to a Text File</s:String>
+            <s:String>Package\Load ManufacturingFact.Paths[Lookup Match Output]</s:String>
+            <s:String>Package\Load ManufacturingFact.Paths[Lookup No Match Output]</s:String>
+            <s:String>Package\Load ManufacturingFact.Paths[Lookup Match Output1]</s:String>
+            <s:String>Package\Load ManufacturingFact.Paths[Lookup No Match Output1]</s:String>
+            <s:String>Package\Load ManufacturingFact.Paths[Lookup No Match Output2]</s:String>
+            <s:String>Package\Load ManufacturingFact.Paths[Union All Output 1]</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load ManufacturingFact\Validate Product">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimProduct]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load ManufacturingFact\Validate Machine Number">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimMachine]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load ManufacturingFact\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load ManufacturingFact\Validate Batch Number">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimBatch]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

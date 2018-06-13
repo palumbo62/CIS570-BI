@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "PalumboMidtermDM", "PalumboMidtermDM\PalumboMidtermDM.dwproj", "{0DF5C2E5-80A8-4C65-9E82-D4221C2CE00E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DF5C2E5-80A8-4C65-9E82-D4221C2CE00E}.Development|Default.ActiveCfg = Development
+		{0DF5C2E5-80A8-4C65-9E82-D4221C2CE00E}.Development|Default.Build.0 = Development
+		{0DF5C2E5-80A8-4C65-9E82-D4221C2CE00E}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE2593FC-F497-4B4A-80E0-3AB6C322B9BD}
+	EndGlobalSection
+EndGlobal

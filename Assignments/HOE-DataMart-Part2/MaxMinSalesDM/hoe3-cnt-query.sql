@@ -1,0 +1,1 @@
+﻿SELECT COUNT(*) AS Cnt FROM dbo.DimPlant

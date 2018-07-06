@@ -1,0 +1,150 @@
+Organization,AwardYear,AWARD_SUM,AWARD_COUNT,AverageAwardDuration,Award Total
+Colorado State University,2012,11592315,41,2.926829268,11.592315
+Colorado State University,2011,19501636,45,3,19.501636
+Colorado State University,2010,25936145,64,2.984375,25.936145
+Colorado State University,2009,30001446,76,3.171052632,30.001446
+Colorado State University,2008,26957045,40,3.4,26.957045
+Colorado State University,2007,17990587,46,3.717391304,17.990587
+Colorado State University,2006,48631436,42,3.785714286,48.631436
+Colorado State University,2005,15430145,46,3.239130435,15.430145
+Colorado State University,2004,15407506,46,3.108695652,15.407506
+Colorado State University,2003,52819462,46,3.652173913,52.819462
+Colorado State University,2002,21083928,41,3.487804878,21.083928
+Colorado State University,2001,24420521,50,3.42,24.420521
+Iowa State University,2012,16738011,65,2.8,16.738011
+Iowa State University,2011,28476330,61,2.868852459,28.47633
+Iowa State University,2010,29119540,72,3.180555556,29.11954
+Iowa State University,2009,35865216,79,3.316455696,35.865216
+Iowa State University,2008,39312329,59,3.593220339,39.312329
+Iowa State University,2007,14145281,44,3.590909091,14.145281
+Iowa State University,2006,22620733,53,4.075471698,22.620733
+Iowa State University,2005,28102495,57,3.719298246,28.102495
+Iowa State University,2004,18479330,57,3.50877193,18.47933
+Iowa State University,2003,23402109,74,3.513513514,23.402109
+Iowa State University,2002,20687478,65,3.630769231,20.687478
+Iowa State University,2001,22841170,66,3.075757576,22.84117
+Kansas State University,2012,8839116,23,2.695652174,8.839116
+Kansas State University,2011,8375445,29,2.931034483,8.375445
+Kansas State University,2010,12892135,27,3.296296296,12.892135
+Kansas State University,2009,12324482,26,3,12.324482
+Kansas State University,2008,13026957,25,3.36,13.026957
+Kansas State University,2007,4295195,17,3.117647059,4.295195
+Kansas State University,2006,7401595,24,3.791666667,7.401595
+Kansas State University,2005,10320776,35,3.314285714,10.320776
+Kansas State University,2004,7929921,19,3.789473684,7.929921
+Kansas State University,2003,7891970,22,3.136363636,7.89197
+Kansas State University,2002,11996245,28,3.392857143,11.996245
+Kansas State University,2001,7680499,29,3.24137931,7.680499
+Michigan State University,2012,17351663,58,2.948275862,17.351663
+Michigan State University,2011,55492870,89,3.08988764,55.49287
+Michigan State University,2010,48226201,90,3,48.226201
+Michigan State University,2009,48336631,108,3.398148148,48.336631
+Michigan State University,2008,32206428,91,3.43956044,32.206428
+Michigan State University,2007,41099688,91,3.736263736,41.099688
+Michigan State University,2006,128226517,68,3.308823529,128.226517
+Michigan State University,2005,39496414,87,3.75862069,39.496414
+Michigan State University,2004,30138908,68,3.470588235,30.138908
+Michigan State University,2003,65931295,81,3.814814815,65.931295
+Michigan State University,2002,28895201,67,3.582089552,28.895201
+Michigan State University,2001,108207941,78,3.512820513,108.207941
+North Carolina State University,2012,31440526,91,2.879120879,31.440526
+North Carolina State University,2011,30047487,85,2.823529412,30.047487
+North Carolina State University,2010,42999142,104,3.048076923,42.999142
+North Carolina State University,2009,42132802,96,3.427083333,42.132802
+North Carolina State University,2008,45732127,88,3.329545455,45.732127
+North Carolina State University,2007,30999659,76,3.684210526,30.999659
+North Carolina State University,2006,25228523,72,3.652777778,25.228523
+North Carolina State University,2005,18624202,59,3.254237288,18.624202
+North Carolina State University,2004,45865137,87,4.24137931,45.865137
+North Carolina State University,2003,32132784,98,3.653061224,32.132784
+North Carolina State University,2002,14577942,62,3.629032258,14.577942
+North Carolina State University,2001,28185012,72,3.638888889,28.185012
+Oklahoma State University,2012,5331516,21,2.666666667,5.331516
+Oklahoma State University,2011,6451830,20,2.9,6.45183
+Oklahoma State University,2010,3547685,18,2.277777778,3.547685
+Oklahoma State University,2009,12117404,32,3.28125,12.117404
+Oklahoma State University,2008,17427826,21,3.333333333,17.427826
+Oklahoma State University,2007,6598219,22,3.636363636,6.598219
+Oklahoma State University,2006,3428937,16,2.875,3.428937
+Oklahoma State University,2005,13729263,19,3.684210526,13.729263
+Oklahoma State University,2004,8990958,13,3.692307692,8.990958
+Oklahoma State University,2003,2753655,13,3,2.753655
+Oklahoma State University,2002,12781399,16,4.0625,12.781399
+Oklahoma State University,2001,6109189,19,3.631578947,6.109189
+Oregon State University,2012,23180107,86,2.720930233,23.180107
+Oregon State University,2011,31435386,71,2.746478873,31.435386
+Oregon State University,2010,33312756,82,2.975609756,33.312756
+Oregon State University,2009,33374748,87,3.183908046,33.374748
+Oregon State University,2008,27437548,60,3.816666667,27.437548
+Oregon State University,2007,28351495,73,3.602739726,28.351495
+Oregon State University,2006,28117875,71,3.718309859,28.117875
+Oregon State University,2005,34012860,66,3.696969697,34.01286
+Oregon State University,2004,25253550,62,3.725806452,25.25355
+Oregon State University,2003,34991888,73,3.767123288,34.991888
+Oregon State University,2002,29278355,49,3.530612245,29.278355
+Oregon State University,2001,28522558,58,3.775862069,28.522558
+Purdue University,2012,33991966,121,2.859504132,33.991966
+Purdue University,2011,32952375,109,2.899082569,32.952375
+Purdue University,2010,59100269,134,2.902985075,59.100269
+Purdue University,2009,144482031,199,3.246231156,144.482031
+Purdue University,2008,44963810,123,3.504065041,44.96381
+Purdue University,2007,68150043,126,3.801587302,68.150043
+Purdue University,2006,31291383,96,3.40625,31.291383
+Purdue University,2005,37824828,89,3.606741573,37.824828
+Purdue University,2004,44181556,100,3.55,44.181556
+Purdue University,2003,34292101,104,3.557692308,34.292101
+Purdue University,2002,46975317,97,3.432989691,46.975317
+Purdue University,2001,23564973,71,3.323943662,23.564973
+Texas A&M University Main Campus,2012,13306896,52,2.846153846,13.306896
+Texas A&M University Main Campus,2011,673498,3,2.666666667,0.673498
+Texas A&M University Main Campus,2009,1635241,4,3.25,1.635241
+Texas A&M University Main Campus,2008,3219664,6,3.833333333,3.219664
+Texas A&M University Main Campus,2007,5249639,3,5.333333333,5.249639
+Texas A&M University Main Campus,2006,2932358,4,4.25,2.932358
+Texas A&M University Main Campus,2001,91655,2,1,0.091655
+University of Tennessee Chattanooga,2012,798685,3,3,0.798685
+University of Tennessee Chattanooga,2011,1299727,2,3.5,1.299727
+University of Tennessee Chattanooga,2010,251922,2,3,0.251922
+University of Tennessee Chattanooga,2009,863252,3,3.666666667,0.863252
+University of Tennessee Chattanooga,2007,802261,3,4.666666667,0.802261
+University of Tennessee Chattanooga,2005,436330,3,2.333333333,0.43633
+University of Tennessee Chattanooga,2004,625953,3,3,0.625953
+University of Tennessee Chattanooga,2003,550099,3,3,0.550099
+University of Tennessee Chattanooga,2002,315600,3,3,0.3156
+University of Tennessee Chattanooga,2001,593311,4,3,0.593311
+University of Tennessee Knoxville,2012,12847800,48,2.5,12.8478
+University of Tennessee Knoxville,2011,16954016,49,2.755102041,16.954016
+University of Tennessee Knoxville,2010,31238338,46,2.717391304,31.238338
+University of Tennessee Knoxville,2009,35160199,59,3.203389831,35.160199
+University of Tennessee Knoxville,2008,28654976,46,3.5,28.654976
+University of Tennessee Knoxville,2007,78957307,40,3,78.957307
+University of Tennessee Knoxville,2006,8329581,25,3.48,8.329581
+University of Tennessee Knoxville,2005,14474668,33,3.545454545,14.474668
+University of Tennessee Knoxville,2004,16830143,34,3.617647059,16.830143
+University of Tennessee Knoxville,2003,8688182,35,3.228571429,8.688182
+University of Tennessee Knoxville,2002,13656935,40,3.05,13.656935
+University of Tennessee Knoxville,2001,22826167,36,3.277777778,22.826167
+Virginia Polytechnic Institute and State University,2012,19609620,78,2.666666667,19.60962
+Virginia Polytechnic Institute and State University,2011,33728859,101,2.801980198,33.728859
+Virginia Polytechnic Institute and State University,2010,33090551,91,2.956043956,33.090551
+Virginia Polytechnic Institute and State University,2009,51157804,132,3.242424242,51.157804
+Virginia Polytechnic Institute and State University,2008,34348029,92,3.652173913,34.348029
+Virginia Polytechnic Institute and State University,2007,25197869,86,3.593023256,25.197869
+Virginia Polytechnic Institute and State University,2006,16849182,70,3.185714286,16.849182
+Virginia Polytechnic Institute and State University,2005,24486263,68,3.852941176,24.486263
+Virginia Polytechnic Institute and State University,2004,23678146,71,3.450704225,23.678146
+Virginia Polytechnic Institute and State University,2003,17688332,58,3.706896552,17.688332
+Virginia Polytechnic Institute and State University,2002,23323842,67,3.388059701,23.323842
+Virginia Polytechnic Institute and State University,2001,22554363,59,3.711864407,22.554363
+Washington State University,2012,14509261,43,2.837209302,14.509261
+Washington State University,2011,10356637,31,2.870967742,10.356637
+Washington State University,2010,17134273,60,2.866666667,17.134273
+Washington State University,2009,26998668,63,3.238095238,26.998668
+Washington State University,2008,8475261,24,2.791666667,8.475261
+Washington State University,2007,14623959,36,3.388888889,14.623959
+Washington State University,2006,19805056,34,3.617647059,19.805056
+Washington State University,2005,6557197,21,3.666666667,6.557197
+Washington State University,2004,11893564,28,3.607142857,11.893564
+Washington State University,2003,9126621,27,3.444444444,9.126621
+Washington State University,2002,10626850,38,3.236842105,10.62685
+Washington State University,2001,12922216,38,3.5,12.922216
